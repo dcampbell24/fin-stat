@@ -380,7 +380,7 @@ impl App {
         if fs::exists(&file_csv)? {
             return Err(anyhow::Error::msg(format!(
                 "\"{}\" already exists!",
-                &file_csv.display()
+                file_csv.display()
             )));
         }
 
@@ -409,7 +409,7 @@ impl App {
                 date: Utc::now(),
             };
 
-            let name = format!("Investor 360: {}", &investor_360_record.symbol);
+            let name = format!("Investor 360: {}", investor_360_record.symbol);
             let mut name_matches = false;
             for account in &mut self.accounts.inner {
                 if account.name == name {
@@ -914,7 +914,7 @@ impl Default for App {
             command_line::File::Load(file_path) => {
                 let file_path_ = file_path.clone();
                 let (accounts, file) = Accounts::load(None, file_path).unwrap_or_else(|err| {
-                    panic!("error loading {}: {}", &file_path_.display(), err)
+                    panic!("error loading {}: {}", file_path_.display(), err)
                 });
                 Self::new(accounts, Some(file))
             }
@@ -922,7 +922,7 @@ impl Default for App {
                 let accounts = Accounts::new();
                 let file_path_ = file_path.clone();
                 let file = accounts.save_first(file_path).unwrap_or_else(|error| {
-                    panic!("error creating {}: {}", &file_path_.display(), error)
+                    panic!("error creating {}: {}", file_path_.display(), error)
                 });
 
                 Self::new(accounts, Some(file))

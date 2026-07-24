@@ -34,7 +34,7 @@ impl Ohlc {
         }
 
         if !errors.is_empty() {
-            return Err(CryptoErrors { errors })?;
+            Err(CryptoErrors { errors })?;
         }
 
         let mut result = &value["result"];
