@@ -3,7 +3,7 @@ name = "financial-accounts"
 description = "Application for tracking your finances"
 version = "0.4.1"
 edition = "2024"
-rust-version = "1.89"
+rust-version = "1.90"
 license = "MIT OR Apache-2.0"
 keywords = ["finance"]
 categories = ["finance"]
@@ -20,7 +20,7 @@ clap = { version = "4", features = ["derive"] }
 clap_lex = "1"
 clap_mangen = "0.3"
 csv = "1"
-dirs = "6"
+dirs = "7"
 futures = "0.3"
 iced = { version = "0.14", features = ["canvas", "image", "tokio"] }
 image = { version = "0.25", features = ["png"], default-features = false }
@@ -36,7 +36,7 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 thousands = "0.2"
 webbrowser = "1"
-yahoo_finance_api = { version = "4", features = ["decimal"] }
+yahoo_finance_api = { version = "5", features = ["decimal"] }
 
 [lints.clippy]
 cargo = "warn"
